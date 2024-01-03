@@ -1,0 +1,24 @@
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=critical,CA:true
+subjectKeyIdentifier=none
+
+[ req ]
+#default_bits		= 2048
+default_md		= sha256
+default_keyfile 	= privkey.pem
+distinguished_name	= req_distinguished_name
+req_extensions = v3_req
+prompt = no
+x509_extensions = x509_extensions
+# attributes		= req_attributes
+
+[ req_distinguished_name ]
+countryName			= US
+organizationName		= WebAuthn WG
+commonName			= Example Attestation
+
+[v3_req]
+# 1.3.6.1.4.1.45724.1.1.2 = ASN1:FORMAT:HEX,OctetString:6b105b7db6fc65
+1.3.6.1.4.1.45724.1.1.4 = ASN1:FORMAT:HEX,OctetString:cd8c395c26edeede653b00797d03ca3c
+1.3.6.1.4.1.45724.1.1.5 = ASN1:Integer:42
+
